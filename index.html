@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d25">
+  <meta name="description" content="A little birthday universe made especially for Mimi.">
+  <title>Happy Birthday, Mimi ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"></div>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Back to home">for mimi <span>♡</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#memories">Memories</a>
+      <a href="#surprise">Surprise</a>
+      <a href="#letter">Letter</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">✦ A tiny corner of the universe, just for you ✦</p>
+        <h1>Happy Birthday,<br><span class="script">Mimi</span> <span class="heart">♡</span></h1>
+        <p class="hero-subtitle">Another year of being absolutely amazing… and somehow still putting up with me. Iconic, honestly. 😭💗</p>
+        <div class="hero-actions">
+          <button class="button primary" id="start-button">Start the birthday chaos ✨</button>
+          <a class="button ghost" href="#letter">Skip to the sappy bit</a>
+        </div>
+        <p class="tiny-note">Warning: may contain friendship, nonsense, and suspicious amounts of affection.</p>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a birthday cake">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="spark spark-a">✦</div><div class="spark spark-b">✧</div><div class="spark spark-c">♡</div>
+        <div class="cake">
+          <div class="candles"><i></i><i></i><i></i></div>
+          <div class="flames"><b></b><b></b><b></b></div>
+          <div class="icing"></div><div class="cake-layer"></div><div class="cake-plate"></div>
+        </div>
+        <div class="floating-note note-left">certified<br>birthday star ⭐</div>
+        <div class="floating-note note-right">bestie<br>energy ♡</div>
+      </div>
+      <a class="scroll-cue" href="#memories">scroll for your surprise ↓</a>
+    </section>
+
+    <section class="section memories-section" id="memories">
+      <div class="section-heading">
+        <p class="eyebrow">the lore is crazy</p>
+        <h2>Our little collection of <span class="script">memories</span></h2>
+        <p>Every friendship has its own little universe. Here's a tiny one for ours.</p>
+      </div>
+      <div class="memory-grid">
+        <article class="memory-card tilt-card">
+          <span class="card-sticker">01 / chaos</span>
+          <div class="memory-emoji">🤡</div>
+          <h3>The absolute nonsense</h3>
+          <p>All the random conversations that somehow become the funniest thing ever. We deserve an award. Or supervision.</p>
+          <span class="scribble">zero braincells ♡</span>
+        </article>
+        <article class="memory-card tilt-card">
+          <span class="card-sticker">02 / comfort</span>
+          <div class="memory-emoji">🫶</div>
+          <h3>The real talks</h3>
+          <p>Thank you for listening, understanding, and making things feel a little less heavy when life gets weird.</p>
+          <span class="scribble">safe place energy</span>
+        </article>
+        <article class="memory-card tilt-card">
+          <span class="card-sticker">03 / forever</span>
+          <div class="memory-emoji">🌙</div>
+          <h3>The little things</h3>
+          <p>The tiny moments, the jokes nobody else gets, and the memories that might seem small but mean a lot to me.</p>
+          <span class="scribble">my favourite lore</span>
+        </article>
+      </div>
+      <p class="personalize-hint">Psst… you can swap these cards for real memories and inside jokes before you send it. 💌</p>
+    </section>
+
+    <section class="section surprise-section" id="surprise">
+      <div class="section-heading">
+        <p class="eyebrow">important birthday business</p>
+        <h2>You've been assigned a <span class="script">present</span> 🎁</h2>
+        <p>It's extremely valuable. Probably. The wrapping budget was huge.</p>
+      </div>
+      <button class="gift-button" id="gift-button" aria-label="Open your birthday present">
+        <span class="gift-bow"></span><span class="gift-lid"></span><span class="gift-box"><span>♡</span></span>
+        <span class="gift-label">tap to open!</span>
+      </button>
+      <div class="gift-result" id="gift-result" hidden>
+        <p class="eyebrow">SURPRISE!!</p>
+        <h3>YOU GET… unlimited bestie privileges 🏆</h3>
+        <p>Redeemable for support, terrible jokes, random check-ins, and someone cheering you on even when you don't feel like cheering for yourself.</p>
+        <button class="button primary" id="more-surprise">Wait, there's more?!</button>
+      </div>
+    </section>
+
+    <section class="section little-wishes">
+      <div class="wish-panel">
+        <div class="wish-moon">☾</div>
+        <p class="eyebrow">a birthday wish, just for you</p>
+        <h2>May this next chapter be <span class="script">kind</span> to you.</h2>
+        <p>More laughter that makes your stomach hurt. More moments where you feel proud of yourself. More people who see how special you are. And more reasons to smile on the days you least expect it.</p>
+        <button class="button ghost" id="wish-button">Make a tiny wish ✨</button>
+        <p class="wish-response" id="wish-response" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section letter-section" id="letter">
+      <div class="letter-envelope"><span>♡</span></div>
+      <p class="eyebrow">okay, jokes aside for a second</p>
+      <h2>A little <span class="script">letter</span> for Mimi</h2>
+      <p class="letter-intro">The silly stuff is important, but so is telling you what you mean to me.</p>
+      <button class="button primary" id="open-letter">Open your letter 💌</button>
+      <article class="letter-paper" id="letter-paper" hidden>
+        <p class="letter-salutation">Dear Mimi, ♡</p>
+        <p>Happy birthday, bestie. I hope you know how genuinely glad I am that you're in my life.</p>
+        <p>Thank you for being someone I can laugh with, talk to, and share all the random little parts of life with. You make ordinary moments feel brighter, and even when you don't realise it, your presence can make a difficult day feel easier.</p>
+        <p>I hope this new year of your life brings you the kind of happiness you don't have to pretend to feel. I hope you get chances to grow, try new things, make amazing memories, and see yourself with the same kindness that you give to other people. You deserve friends who show up for you, people who appreciate you, and moments that remind you how loved you are.</p>
+        <p>Whatever this next chapter looks like, I’m rooting for you. On the exciting days, the confusing days, and the days when everything feels a bit much. You never have to be perfect to be important to me. Just being you is enough.</p>
+        <p>So today, please eat something good, laugh as much as possible, and let yourself be celebrated. This little website is just a tiny reminder that you matter and that I’m grateful for you.</p>
+        <p class="letter-signoff">Happy birthday, Mimi. Love you loads, bestie. ♡</p>
+        <p class="letter-signature">— your favourite menace ✨</p>
+      </article>
+    </section>
+
+    <section class="final-screen section">
+      <div class="final-stars">✦　✧　♡　✧　✦</div>
+      <h2>Keep being <span class="script">you</span>.</h2>
+      <p>The world is better with you in it, Mimi.</p>
+      <p class="final-small">Happy birthday, bestie. This is your reminder, today and every day. 💗</p>
+      <button class="button ghost" id="celebrate-again">One more celebration 🎉</button>
+    </section>
+  </main>
+
+  <footer>made with questionable coding skills & an unreasonable amount of love ♡</footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
